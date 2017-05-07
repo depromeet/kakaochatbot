@@ -4,6 +4,7 @@ var fs = require('fs');
 
 
 var key = router.get('/', function(req, res, next) {
+	console.log("1");
 
     fs.readFile( __dirname + "/../data/" + "keyboard.json", 'utf8', function (err, data) {
        console.log( JSON.stringify( JSON.parse( data ) ) );
