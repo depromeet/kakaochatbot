@@ -7,7 +7,7 @@ var fs = require('fs');
 
 
 
-router.post('/message', function(req, res){
+router.post('/', function(req, res){
 
 		var result = {  };
 		// CHECK REQ VALIDITY
@@ -33,8 +33,7 @@ router.post('/message', function(req, res){
 
 					messages["message"] = {"text" : "defflee"};
 
-				}
-                else{
+				}else{
 					messages["message"] = {"text" : ""};
 				}
 				fs.writeFile(__dirname + "/../data/message.json",
