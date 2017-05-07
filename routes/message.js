@@ -24,7 +24,7 @@ router.post('/message', function(req, res){
 				var messages = JSON.parse(data);
 				// 각 keyboard 버튼에 따른 응답 메시지 설정
 				if(req.body["content"] == "세션공지"){
-					messages["message"] = {"text" : "*5월 6일 세션 공지입니다* \t 일시: 이번주 토요일 \t 장소: 선정릉역 한국과학창의재단 14층 \t 일정: 팀별 스터디 진행 후 \t  15:00~15:30 세미나 윤상현님 "깃헙 운영하기" 세미나 \t 15:30~18:00 정기 세션 진행"};
+					messages["message"] = {"text" : "*5월 6일 세션 공지입니다* \t 일시: 이번주 토요일 \t 장소: 선정릉역 한국과학창의재단 14층 \t 일정: 팀별 스터디 진행 후 \t  15:00~15:30 세미나 윤상현님 `깃헙 운영하기` 세미나 \t 15:30~18:00 정기 세션 진행"};
 				}else if(req.body["content"] == "회장번호"){
 
 					messages["message"] = {"text" : "김동환 010 4457 4497"};
