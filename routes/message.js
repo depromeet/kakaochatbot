@@ -8,6 +8,7 @@ var fs = require('fs');
 
 
 router.post('/message', function(req, res){
+
 		var result = {  };
 		// CHECK REQ VALIDITY
         if(!req.body["user_key"] || !req.body["type"] || !req.body["content"]){
