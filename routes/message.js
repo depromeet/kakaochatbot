@@ -3,17 +3,6 @@ var router = express.Router();
 var fs = require('fs');
 
 
-var key = router.get('/', function(req, res, next) {
-	console.log("1");
-
-    fs.readFile( __dirname + "/../data/" + "keyboard.json", 'utf8', function (err, data) {
-       console.log( JSON.stringify( JSON.parse( data ) ) );
-       res.end( JSON.stringify( JSON.parse( data ) ) );
-
-    });
-
-});
-
 
 
 router.post('/', function(req, res){
@@ -35,7 +24,18 @@ router.post('/', function(req, res){
 				if(req.body["content"] == "세션공지"){
 					messages["message"] = {"text" : "*5월 6일 세션 공지입니다* \t 일시: 이번주 토요일 \t 장소: 선정릉역 한국과학창의재단 14층 \t 일정: 팀별 스터디 진행 후 \t  15:00~15:30 세미나 윤상현님 `깃헙 운영하기` 세미나 \t 15:30~18:00 정기 세션 진행"};
 				}else if(req.body["content"] == "회장번호"){
-					key
+				console.log("$");					
+
+router.get('/', function(req, res, next) {
+        console.log("1");
+
+    fs.readFile( __dirname + "/../data/" + "keyboard.json", 'utf8', function (err, data) {
+       console.log( JSON.stringify( JSON.parse( data ) ) );
+       res.end( JSON.stringify( JSON.parse( data ) ) );
+
+    });
+
+});
 					messages["message"] = {"text" : "김동환 010 4457 4497"};
 
 				}else if(req.body["content"] == "만든이"){
